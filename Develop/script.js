@@ -56,6 +56,13 @@ function generatePassword() {
     "click ok to include special character or cancel to skip"
   );
 
+  // Check if the user entered at least one character choice if not end error message and restart program
+  if (!isUpper && !isLower && !isNumeric && !isSpecial) {
+    alert("Error: one character type must be selected!");
+    password = "";
+    return generatePassword();
+  }
+
   //Initialize empty password
   var password = "";
 
